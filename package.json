@@ -1,0 +1,37 @@
+{
+  "name": "strapi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "license": "MIT",
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "scripts": {
+    "build": "strapi build",
+    "develop": "strapi develop",
+    "generate-api": "openapi-generator-cli generate -g typescript-axios -i src/extensions/documentation/documentation/1.0.0/full_documentation.json -o ../webapp/src/generated/ --skip-validate-spec --additional-properties=supportsES6=true,useSingleRequestParameter=true,withInterfaces=true",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.9.0",
+    "@strapi/plugin-cloud": "4.17.1",
+    "@strapi/plugin-documentation": "^4.17.1",
+    "@strapi/plugin-i18n": "4.17.1",
+    "@strapi/plugin-users-permissions": "4.17.1",
+    "@strapi/strapi": "4.17.1",
+    "better-sqlite3": "8.6.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "styled-components": "5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "6833eeec-c954-41ac-8053-ce5a0d78be8a"
+  }
+}

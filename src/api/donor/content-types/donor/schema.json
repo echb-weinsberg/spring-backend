@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "donors",
+  "info": {
+    "singularName": "donor",
+    "pluralName": "donors",
+    "displayName": "Donor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    },
+    "title": {
+      "type": "enumeration",
+      "enum": [
+        "mr",
+        "mrs",
+        "mrAndMrs",
+        "none"
+      ]
+    },
+    "street": {
+      "type": "string"
+    },
+    "plz": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "wantReceipt": {
+      "type": "boolean",
+      "required": false
+    },
+    "ibans": {
+      "type": "json"
+    },
+    "mandateNumber": {
+      "type": "string"
+    },
+    "note": {
+      "type": "text"
+    },
+    "email": {
+      "type": "string"
+    },
+    "organisation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::organisation.organisation",
+      "inversedBy": "donors"
+    }
+  }
+}

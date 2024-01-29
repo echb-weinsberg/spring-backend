@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "donations",
+  "info": {
+    "singularName": "donation",
+    "pluralName": "donations",
+    "displayName": "Donation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "decimal"
+    },
+    "date": {
+      "type": "date"
+    },
+    "note": {
+      "type": "text"
+    },
+    "donor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::donor.donor"
+    }
+  }
+}
