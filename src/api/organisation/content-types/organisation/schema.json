@@ -26,6 +26,22 @@
       "relation": "oneToMany",
       "target": "api::donor.donor",
       "mappedBy": "organisation"
+    },
+    "receiptTemplate": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::receipt-template.receipt-template",
+      "mappedBy": "organisation"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

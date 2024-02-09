@@ -469,6 +469,12 @@ export interface ApiOrganisationOrganisation extends Schema.CollectionType {
       'oneToMany',
       'api::donor.donor'
     >;
+    receiptTemplate: Attribute.Relation<
+      'api::organisation.organisation',
+      'oneToOne',
+      'api::receipt-template.receipt-template'
+    >;
+    logo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -480,6 +486,43 @@ export interface ApiOrganisationOrganisation extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::organisation.organisation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiReceiptTemplateReceiptTemplate
+  extends Schema.CollectionType {
+  collectionName: 'receipt_templates';
+  info: {
+    singularName: 'receipt-template';
+    pluralName: 'receipt-templates';
+    displayName: 'receiptTemplate';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    templateStructure: Attribute.JSON;
+    organisation: Attribute.Relation<
+      'api::receipt-template.receipt-template',
+      'oneToOne',
+      'api::organisation.organisation'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::receipt-template.receipt-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::receipt-template.receipt-template',
       'oneToOne',
       'admin::user'
     > &
@@ -912,6 +955,7 @@ declare module '@strapi/types' {
       'api::donation.donation': ApiDonationDonation;
       'api::donor.donor': ApiDonorDonor;
       'api::organisation.organisation': ApiOrganisationOrganisation;
+      'api::receipt-template.receipt-template': ApiReceiptTemplateReceiptTemplate;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
