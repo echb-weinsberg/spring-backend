@@ -1,3 +1,6 @@
+# Spring
+Spring is a donation management software for non-profit organizations in Germany. With Spring, donation entries can be maintained, and donation receipts can be automatically generated.
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
