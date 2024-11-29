@@ -1,6 +1,16 @@
 # Use the official Node.js 18 Alpine image
 FROM node:18-alpine
 
+ARG HOST
+ARG PORT
+ARG APP_KEYS
+ARG API_TOKEN_SALT
+ARG ADMIN_JWT_SECRET
+ARG TRANSFER_TOKEN_SALT
+ARG DATABASE_CLIENT
+ARG DATABASE_FILENAME
+ARG JWT_SECRET
+
 # Set the working directory inside the container
 WORKDIR /app
 
