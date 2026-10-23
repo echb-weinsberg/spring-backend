@@ -1,5 +1,5 @@
-# Use the official Node.js 18 Alpine image
-FROM node:18-alpine
+# Use the official Node.js 26 Alpine image
+FROM node:26-alpine
 
 ARG HOST
 ARG PORT
